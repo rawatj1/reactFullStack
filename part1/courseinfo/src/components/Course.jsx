@@ -5,26 +5,31 @@ const Header = ({course}) => {
 }
 
 const Content = (props) => {
-    console.log('Parts: ', props.parts)
     const partContent = props.parts.map( part => (
         <p key = {part.name}>
             {part.name} {part.exercise}
         </p>
     ));
-    console.log(partContent)
     return (
         <div>
             {partContent}
         </div>
     )
 }
+const Total = (props) => {
+    const total = props.parts.reduce((acc, curVal) => acc + curVal.exercise, 0)
+    console.log('Total ', total)
+    return (
+        <p>Total of Exercise: {total}</p>
+    )
+}
 
 const Course = (props) => {
-    console.log('Props111: ', props.course.parts)
     return (
         <div>
             <Header course={props.course.name}/>
             <Content parts={props.course.parts}/>
+            <Total parts={props.course.parts}/>
         </div>
     )
 }

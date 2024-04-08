@@ -1,14 +1,5 @@
 import Course from "./components/Course.jsx";
-/*const Total = (props) => {
-    let total = 0;
-    props.parts.forEach(value => {
-        total = total + value.exercise
-    })
-    console.log(total)
-    return (
-        <p>Number of exercises: {total}</p>
-    )
-}*/
+
 /* eslint-disable no-unused-vars */
 const App = () => {
     const course = {
